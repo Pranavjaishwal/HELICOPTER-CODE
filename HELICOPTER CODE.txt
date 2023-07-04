@@ -91,8 +91,8 @@ void showMenu(void)
 	printf("\n\n\n\n3D HELICOPTER GAME");
 	printf("\n---------------------------------------------------------------");
 
-	printf("\n Use m/M to see the menu again.");
-	printf("\n Use escape key to exit.\n");
+    printf("\n Use m/M to see the menu again.");
+    printf("\n Use escape key to exit.\n");
     printf("\nSCORE=%d",touchx);
     printf("\nMOVE_x=%f",move_x);
     printf("\nMOVE_y=%f",move_y);
@@ -328,10 +328,10 @@ for(k=0;k<5;k++)
 
 glPushMatrix();
 glTranslated(rings[k][0],rings[k][1],rings[k][2]);
-	glColor4f(lev*0.2,0.9-k*0.2,0.1+k*0.2,1);
-	glRotatef(90,0,1,0);
-    glScaled(3,3,3);
-	glutSolidTorus(0.2,2, 30, 30);
+glColor4f(lev*0.2,0.9-k*0.2,0.1+k*0.2,1);
+glRotatef(90,0,1,0);
+glScaled(3,3,3);
+glutSolidTorus(0.2,2, 30, 30);
 glPopMatrix();
 
 }
@@ -368,22 +368,19 @@ void drawBlade()
 
 void drawMyRotor()
 {
-  glPushMatrix();
-
  glPushMatrix();
-glColor4f(1,1,1,0.11);
+ glPushMatrix();
+ glColor4f(1,1,1,0.11);
  glTranslated(0,.4,0);
  drawBlade();
  glRotated(120,0,1,0);
  drawBlade();
  glRotated(120,0,1,0);
  drawBlade();
-
  glPopMatrix();
-
-glTranslated(0,.4,0);
+ glTranslated(0,.4,0);
  glRotated(90,1,0,0);
-glColor4f(0,0.5,1,1);
+ glColor4f(0,0.5,1,1);
 
  drawCylinder(.08,.08,.20);
 
@@ -544,7 +541,7 @@ renderBitmapString(move_x,0+3.8,move_z-4,GLUT_BITMAP_HELVETICA_18,"  LEVEL : ");
 		gluLookAt(eye_x+move_x, eye_y, eye_z+move_z+8, move_x, 0, move_z, 0, 1, 0);
 
     glScaled(1,1,1);
-  renderBitmapString(move_x,6,move_z+3,GLUT_BITMAP_TIMES_ROMAN_24,"HELICOPTER GAME");
+renderBitmapString(move_x,6,move_z+3,GLUT_BITMAP_TIMES_ROMAN_24,"HELICOPTER GAME");
 renderBitmapString(move_x,5.5,move_z+2.9,GLUT_BITMAP_HELVETICA_18,"1. SPACE TO CONTINUE");
 renderBitmapString(move_x,5.1,move_z+2.9,GLUT_BITMAP_HELVETICA_18,"2. PRESS 8 FOR UP");
 renderBitmapString(move_x,4.7,move_z+2.9,GLUT_BITMAP_HELVETICA_18,"3. PRESS 2 FOR DOWN");
@@ -552,7 +549,7 @@ renderBitmapString(move_x,4.3,move_z+2.9,GLUT_BITMAP_HELVETICA_18,"4. PRESS 4 FO
 renderBitmapString(move_x,3.9,move_z+2.9,GLUT_BITMAP_HELVETICA_18,"5. PRESS 6 FOR RIGHT");
 renderBitmapString(move_x,3.5,move_z+2.9,GLUT_BITMAP_HELVETICA_18,"6. PRESS ESC TO EXIT");
 glColor3f(0.0f, 0.0f, 0.0f);
-  renderBitmapString(move_x+7,move_y+-3.4,move_z+2,GLUT_BITMAP_HELVETICA_18,"Pranav Jaishwal");
+renderBitmapString(move_x+7,move_y+-3.4,move_z+2,GLUT_BITMAP_HELVETICA_18,"Pranav Jaishwal");
 
 	}
 
